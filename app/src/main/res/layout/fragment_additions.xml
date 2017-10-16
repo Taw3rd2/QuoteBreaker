@@ -1,0 +1,211 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/tab_3"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.programming.waldorf.quotebreaker.AdditionsFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="@string/install_requirements"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:theme="@style/checkBoxStyle">
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/cond_pump_addon_check"
+                android:layout_weight=".1"/>
+
+            <TextView
+                android:layout_weight=".8"
+                android:text="@string/cond_pump_addon"/>
+
+            <TextView
+                android:layout_weight=".1"
+                android:text="@string/cond_pump_addon_price"/>
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/programmable_tstat_addon_check"
+                android:layout_weight=".1"/>
+
+            <TextView
+                android:layout_weight=".8"
+                android:text="@string/programmable_tstat_addon"/>
+
+            <TextView
+                android:layout_weight=".1"
+                android:text="@string/programmable_tstat_price"/>
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/two_stage_stat_check"
+                android:layout_weight=".1"/>
+
+            <TextView
+                android:layout_weight=".8"
+                android:text="@string/two_programmable_tstat_addon"/>
+
+            <TextView
+                android:layout_weight=".1"
+                android:text="@string/two_programmabel_tstat_addon_price"/>
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/infinity_wifi_check"
+                android:layout_weight=".1"/>
+
+            <TextView
+                android:layout_weight=".8"
+                android:text="@string/infinity_wifi_addon"/>
+
+            <TextView
+                android:layout_weight=".1"
+                android:text="@string/infinity_wifi_addon_price"/>
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/lowboy_boot_addon_check"
+                android:layout_weight=".1"/>
+
+            <TextView
+                android:layout_weight=".8"
+                android:text="@string/filter_boot"/>
+
+            <TextView
+                android:layout_weight=".1"
+                android:text="@string/filter_boot_price"/>
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/crawl_attic_check"
+                android:layout_weight=".1"/>
+
+            <TextView
+                android:layout_weight=".8"
+                android:text="@string/crawl_attic"/>
+
+            <TextView
+                android:layout_weight=".1"
+                android:text="@string/crawl_attic_price"/>
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/after_hours_check"
+                android:layout_weight=".1"/>
+
+            <TextView
+                android:layout_weight=".8"
+                android:text="@string/after_hours"/>
+
+            <TextView
+                android:layout_weight=".1"
+                android:text="@string/after_hours_price"/>
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/one_piece_permit_check"
+                android:layout_weight=".1"/>
+
+            <TextView
+                android:layout_weight=".8"
+                android:text="@string/one_permit"/>
+
+            <TextView
+                android:layout_weight=".1"
+                android:text="@string/one_permit_price"/>
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/two_piece_permit_check"
+                android:layout_weight=".1"/>
+
+            <TextView
+                android:layout_weight=".8"
+                android:text="@string/two_permit"/>
+
+            <TextView
+                android:layout_weight=".1"
+                android:text="@string/two_permit_price"/>
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/conversion_kit_check"
+                android:layout_weight=".1"/>
+
+            <TextView
+                android:layout_weight=".8"
+                android:text="@string/conversion_kit"/>
+
+            <TextView
+                android:layout_weight=".1"
+                android:text="@string/conversion_kit_price"/>
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/horizonal_install_check"
+                android:layout_weight=".1"/>
+
+            <TextView
+                android:layout_weight=".8"
+                android:text="@string/horizonal"/>
+
+            <TextView
+                android:layout_weight=".1"
+                android:text="@string/horizonal_price"/>
+        </TableRow>
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/ten_year_labor_check"
+                android:layout_weight=".1"/>
+
+            <TextView
+                android:layout_weight=".8"
+                android:text="@string/ten_year_labor"/>
+
+            <TextView
+                android:layout_weight=".1"
+                android:text="@string/ten_year_labor_price"/>
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/next"/>
+
+</LinearLayout>
