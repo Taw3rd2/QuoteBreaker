@@ -4,6 +4,7 @@ package com.programming.waldorf.quotebreaker;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,9 @@ import android.widget.EditText;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.app.Activity;
+import android.view.inputmethod.InputMethodManager;
+
+import static android.content.Context.INPUT_METHOD_SERVICE;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,12 +31,13 @@ public class SizingFragment extends Fragment {
     private static final String TAG = "Thomas!!! = ";
     private EditText sqfootInput;
     private TextView requiredBtusView;
+    ViewPager mViewPager;
 
     SizingSectionListener activityCommander;
 
 
     public interface SizingSectionListener{
-        public void createSize(int btu);
+        public void setSize(int btu);
     }
 
     @Override
@@ -61,6 +66,7 @@ public class SizingFragment extends Fragment {
         Log.v(TAG," value of edit text sqFootInput " + sqfootInput);
         requiredBtusView = (TextView) view.findViewById(R.id.required_btu_display);
         final Button saveButton = (Button) view.findViewById(R.id.size_next_button);
+        mViewPager = getActivity().findViewById(R.id.container);
 
 
 
@@ -98,6 +104,13 @@ public class SizingFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+
+                try  {
+                    InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(getView().getWindowToken(), 0);
+                } catch (Exception e) {
+
+                }
 
                 String stringSqFoot = sqfootInput.getText().toString();
                 Log.v(TAG," vlaue if edit text stringSqFoot " + stringSqFoot );
@@ -160,8 +173,9 @@ public class SizingFragment extends Fragment {
     }
 
     public void buttonClicked (View view) {
-        Log.v(TAG,"Started buttonClicked() ");
-        activityCommander.createSize(selectBtuElement);
+        activityCommander.setSize(selectBtuElement);
+        Log.v(TAG,"Save button inside SizingFragment Clicked with size " + selectBtuElement);
+        mViewPager.setCurrentItem(1);
     }
 
 

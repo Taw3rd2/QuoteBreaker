@@ -20,8 +20,10 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements SizingFragment.SizingSectionListener {
+public class MainActivity extends AppCompatActivity implements SizingFragment.SizingSectionListener,
+        ModelFragment.modelSectionListener, AdditionsFragment.additionsTotalsListener {
 
+    private static final String TAG = "Thomas!!! = ";
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -32,31 +34,21 @@ public class MainActivity extends AppCompatActivity implements SizingFragment.Si
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private int btuSelected;
-
+    private int brandSelected;
+    private double additionsTotal;
     /**
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
-    private static final String TAG = "Thomas!!! = ";
-
-
-    // this gets called by the Sizing fragment when the user selects a BTU size
-    @Override
-    public void createSize(int btu) {
-        Log.v(TAG,"createSize inside MainActivity Started!!, and btu = " + btu);
-        ModelFragment modelScreen = (ModelFragment) getSupportFragmentManager().findFragmentById(R.id.tab_2);
-        btuSelected = btu;
-        Log.v(TAG,"createSize inside MainActivity after the fragment declaration and btu = " + btu );
-        Log.v(TAG,"and btuSelected = " + btuSelected);
-        modelScreen.setBtuElement(btuSelected);
-        Log.v(TAG,"createSize inside MainActivity end of method and btu = " + btuSelected);
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -95,6 +87,29 @@ public class MainActivity extends AppCompatActivity implements SizingFragment.Si
         return super.onOptionsItemSelected(item);
     }
 
+    // this gets called by the SizingFragment when the user saves the selected BTU size
+    @Override
+    public void setSize(int btu) {
+        btuSelected = btu;
+        Log.v(TAG,"setSize inside MainActivity Started!!, and btu = " + btu);
+    }
+
+    public int getBtuSelected() {
+        return btuSelected;
+    }
+
+    // this gets called by the ModelFragment when the user saves the selected model
+    @Override
+    public void setBrand(int brand) {
+        brandSelected = brand;
+    }
+
+    // this gets called by the AdditionsFragment when the user saves the selected additions
+    @Override
+    public void setAdditionsTotals(double addTotals) {
+        additionsTotal = addTotals;
+    }
+
     /**
      * A placeholder fragment containing a simple view.
      */
@@ -130,6 +145,7 @@ public class MainActivity extends AppCompatActivity implements SizingFragment.Si
             textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
         }
+
     }
 
     /**

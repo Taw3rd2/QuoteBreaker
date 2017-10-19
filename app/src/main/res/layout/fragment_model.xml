@@ -55,7 +55,8 @@
         <TableRow>
 
             <CheckBox
-                android:id="@+id/option_one_check"/>
+                android:id="@+id/option_one_check"
+                android:layout_marginStart="20dp"/>
 
             <TextView
                 android:id="@+id/option_one"
@@ -75,7 +76,8 @@
         <TableRow>
 
             <CheckBox
-                android:id="@+id/option_two_check"/>
+                android:id="@+id/option_two_check"
+                android:layout_marginStart="20dp"/>
 
             <TextView
                 android:id="@+id/option_two"
@@ -95,7 +97,8 @@
         <TableRow>
 
             <CheckBox
-                android:id="@+id/option_three_check"/>
+                android:id="@+id/option_three_check"
+                android:layout_marginStart="20dp"/>
 
             <TextView
                 android:id="@+id/option_three"
@@ -112,5 +115,14 @@
                 android:padding="3dip"/>
         </TableRow>
     </TableLayout>
+
+    <Button
+        android:id="@+id/brand_save_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/save"/>
 
 </LinearLayout>
