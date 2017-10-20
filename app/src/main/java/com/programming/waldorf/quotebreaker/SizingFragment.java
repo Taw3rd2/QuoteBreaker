@@ -13,9 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.TabHost;
 import android.widget.TextView;
-import android.app.Activity;
 import android.view.inputmethod.InputMethodManager;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;

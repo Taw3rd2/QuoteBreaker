@@ -49,7 +49,6 @@ public class ModelFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_model, container, false);
 
-        setBtuElement();
 
         // find the Views
         Button carrierBtn = (Button) rootView.findViewById(R.id.carrier_check);
